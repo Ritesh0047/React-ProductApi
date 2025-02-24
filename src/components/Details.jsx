@@ -7,7 +7,6 @@ const Details = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
-
   useEffect(() => {
     let foundProduct = products.find((item) => String(item.id) === id);
 

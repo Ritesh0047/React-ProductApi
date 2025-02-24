@@ -44,7 +44,7 @@
 // export default Context;
 import React, { createContext, useState, useEffect } from 'react';
 export const productContext = createContext();
-import Axios from '../utils/axios';
+import axios from '../utils/axios';
 
 const Context = (props) => {
   const [products, setProducts] = useState([]);
@@ -52,7 +52,7 @@ const Context = (props) => {
   useEffect(() => {
     const fetchProductData = async () => {
       try {
-        const response = await Axios.get("/products");
+        const response = await axios.get("/products");
         const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
 
         // Merge API data with locally stored products
